@@ -6,7 +6,7 @@ __Must be installed:__
 - __[terraform](https://www.terraform.io/downloads.html)__ version => 0.12.0
 ### To get started, you'll need to change the variables:
 * key to Google account
-* access key and secret key for amazon cloud
+* access key and secret key for AWS
 * generate your ssh key
 * generate tokens from the git lab runners
 ### Link to frontend and backend git repositories:
