@@ -1,0 +1,67 @@
+#frontend
+---
+#service frontend
+apiVersion: v1
+kind: Service
+metadata:
+  name: dtester-frontend
+  namespace: dtester
+  labels:
+    app: dtapi
+    tier: frontend
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: dtapi
+    tier: frontend
+  type: ClusterIP
+
+---
+#deployment frontend
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dtester-frontend
+  namespace: dtester
+  labels:
+    app: dtapi
+    tier: frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: dtapi
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        app: dtapi
+        tier: frontend
+    spec:
+      containers:
+      - name: dtester-frontend
+        image: registry.gitlab.com/oleh_kuryshko/if-105-ui-dtapi-if-ua-io:latest
+---
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: my-autoscaling-frontend
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v2beta1v1
+    kind: Deployment
+    name: dtester-frontend
+  minReplicas: 2
+  maxReplicas: 4
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      targetAverageUtilization: 70
+  - type: Resource
+    resource:
+      name: memory
+      targetAverageUtilization: 80

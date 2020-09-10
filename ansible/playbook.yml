@@ -1,0 +1,16 @@
+---
+# -------DB
+- hosts: db
+  become: true
+  roles:
+    - update
+    - docker
+    - mysql
+
+#------Ansiblehost
+- hosts: local
+  connection: local
+  become: true
+  roles:
+    - docker
+    - kubectl

@@ -1,0 +1,4 @@
+[local]
+localhost   ansible_connection=local
+[db]  
+db-mysql ansible_host=10.0.12.9 

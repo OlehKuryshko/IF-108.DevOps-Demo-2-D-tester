@@ -1,0 +1,14 @@
+- name: install mysql script
+  shell: mkdir -p /home/centos/db/
+
+- name: copy dtapi_full.sql
+  template: src=/home/centos/ansible/roles/mysql/template/dtapi_full.sql dest=/home/centos/db/dtapi_full.sql owner=root group=root mode=0777
+
+- name: copy sessions.sql
+  template: src=/home/centos/ansible/roles/mysql/template/sessions.sql dest=/home/centos/db/sessions.sql owner=root group=root mode=0777
+
+- name: copy script
+  template: src=/home/centos/ansible/roles/mysql/template/docker-compose.yml dest=/home/centos/db/docker-compose.yml owner=root group=root mode=0777
+
+- name: start docker-compouse
+  shell: docker-compose -f /home/centos/db/docker-compose.yml up -d

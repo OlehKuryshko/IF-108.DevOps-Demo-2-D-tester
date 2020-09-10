@@ -1,0 +1,9 @@
+---
+- name: generate ingress-nginx file
+  local_action: template src=/home/centos/ansible/roles/kubectl/template/ingress.yml.j2 dest=/home/centos/kuber/ingress-nginx.yml mode=0777
+
+- name: generate bastion.sh file
+  local_action: template src=/home/centos/ansible/roles/kubectl/template/bastion.sh.j2 dest=/home/centos/bastion.sh mode=0777
+
+- name: start bastion.sh script
+  shell: sudo /home/centos/bastion.sh

@@ -1,0 +1,76 @@
+#------GCP
+variable "project" {
+  default= "*************"
+}
+variable "region" {
+  default = "us-central1"
+}
+variable "zone" {
+  default = "us-central1-f"
+}
+variable "machine_type" {
+  default = "n1-standard-1"
+}
+variable "machine_type_2" {
+  default = "n1-standard-2"
+}
+variable "image" {
+    default = "centos-cloud/centos-7"
+}
+variable "gce_ssh_user" {
+    default = "*************"
+}
+variable "ip_cidr_range_private" {
+    default = "*************"
+}
+variable "claster_name" {
+  description = "Claster name"
+  default     = "*************"
+}
+variable "ip_db" {
+    default = "*************"
+}
+#-----inventory file
+variable "hosts" {
+  default = "*************/hosts.txt"
+}
+variable "ansible-vars" {
+  default = "*************/main.yml"
+}
+#------------------keys
+variable "key" {
+  default = "*************/key.json"
+}
+variable "pub_key" {
+  default = "*************/id_rsa.pub"
+}
+#----------Ansible
+variable "pvt_key" {
+  default= "*************/id_rsa"
+}
+#-------- AWS provider
+variable "aws_access_key" {
+  default = "*************"
+}
+variable "aws_secret_key" {
+  default = "*************"
+}
+variable "dns_zone_name" {
+  default = "*************"
+}
+variable "region_aws" {
+  default = "*************"
+}
+#------------Gitlab runner
+variable "user-registry" {
+  default = "*************"
+}
+variable "password-registry" {
+  default = "*************"
+}
+variable "registration-token-backend" {
+  default = "*************"
+}
+variable "registration-token-frontend" {
+  default = "*************"
+}
