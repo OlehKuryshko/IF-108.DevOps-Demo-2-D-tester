@@ -1,6 +1,6 @@
 # Demo 2 d-tester
 # General scheme of the project
-![Demo 1](http://i.piccy.info/i9/786dc2cdce78b5dd3810c3221b0dc50c/1599768429/95636/1392829/demo9.jpg)
+![Demo 1](https://i.piccy.info/i9/0dcfa84baee3349219942c061d375cb0/1599768497/82016/1392829/demo99.jpg)
 ### This repository contains all the necessary information to create the infrastructure, configure servers, frontend and backend builds, as well as CI/CD project also using kubernetes and docker
 __Must be installed:__
 - __[terraform](https://www.terraform.io/downloads.html)__ version => 0.12.0
